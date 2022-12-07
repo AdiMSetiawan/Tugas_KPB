@@ -1,0 +1,18 @@
+#db_social_media
+ *tbl_chats
+  >create data
+   INSERT INTO `tbl_chats`(`pesan`, `date`) VALUES
+   ('hi,selamat pagi','2022-11-07'),
+   ('hi,selamat siang','2022-11-14'),
+   ('hi,selamat sore','2022-11-21')
+  >read data
+   -read all data limit 4
+    SELECT * FROM `tbl_chats` LIMIT 4
+   -read data chat berdasarkan id
+    SELECT * FROM `tbl_chats` WHERE id=10
+   -read data yang isDeleted=0
+    SELECT*FROM tbl_chats WHERE isDeleted=0 LIMIT 4
+  >update data
+   UPDATE `tbl_chats` SET `pesan`='Hi,salam kenal',`date`='2022-12-01' WHERE id=10
+  >delete data(soft delete)
+  UPDATE tbl_chats SET isDeleted=1 WHERE id=10
